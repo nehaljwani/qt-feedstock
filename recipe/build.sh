@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 # Compile
 # -------
@@ -25,8 +26,8 @@ if [[ ${HOST} =~ .*linux.* ]]; then
         exit 1
     fi
 
-    ln -s ${GXX} g++
-    ln -s ${GCC} gcc
+    ln -sf ${GXX} g++
+    ln -sf ${GCC} gcc
     export PATH=${PWD}:${PATH}
     export LD=${GXX}
     export CC=${GCC}
@@ -89,8 +90,7 @@ if [[ ${HOST} =~ .*linux.* ]]; then
                 -skip wayland \
                 -skip canvas3d \
                 -skip 3d \
-                -skip webengine \
-                -system-libjpeg \
+                -qt-libjpeg \
                 -system-libpng \
                 -system-zlib \
                 -system-sqlite \

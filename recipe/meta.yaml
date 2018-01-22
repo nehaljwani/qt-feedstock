@@ -25,6 +25,7 @@ source:
       - 0001-qtwebengine-mac_sdk_min-to-10.9.patch
       - 0002-qtwebengine-find_sdk-respect-CONDA_BUILD_SYSROOT.patch
       - 0003-qtwebengine-Set-QMAKE_MACOSX_DEPLOYMENT_TARGET-in-de.patch
+      - 0004-Add-declaration-before-using-method.patch
       # https://codereview.chromium.org/1479893002
       - 0004-chromium-issue1479893002_1.patch
 
@@ -55,25 +56,32 @@ requirements:
     - {{ cdt('libx11-devel') }}          # [linux]
     - {{ cdt('libxext-devel') }}         # [linux]
     - {{ cdt('libxrender-devel') }}      # [linux]
+    - {{ cdt('xcb-util-wm-devel') }}     # [linux]
     - {{ cdt('mesa-libgl-devel') }}      # [linux]
     - {{ cdt('mesa-libegl-devel') }}     # [linux]
     - {{ cdt('mesa-dri-drivers') }}      # [linux]
     - {{ cdt('libxau-devel') }}          # [linux]
+    - {{ cdt('xcb-util-image-devel') }}  # [linux]
+    - {{ cdt('xcb-util-keysyms-devel') }} # [linux]
     - {{ cdt('alsa-lib-devel') }}        # [linux]
     - {{ cdt('gtk2-devel') }}            # [linux]
     - {{ cdt('gtkmm24-devel') }}         # [linux]
     - {{ cdt('libdrm-devel') }}          # [linux]
+    - {{ cdt('libxfixes-devel') }}       # [linux]
     - {{ cdt('libxcomposite-devel') }}   # [linux]
     - {{ cdt('libxcursor-devel') }}      # [linux]
     - {{ cdt('libxi-devel') }}           # [linux]
+    - {{ cdt('expat-devel') }}           # [linux]
     - {{ cdt('libxrandr-devel') }}       # [linux]
     - {{ cdt('pciutils-devel') }}        # [linux]
     - {{ cdt('libxscrnsaver-devel') }}   # [linux]
+    - {{ cdt('libxdamage-devel') }}      # [linux]
     - {{ cdt('libxtst-devel') }}         # [linux]
     - {{ cdt('libselinux-devel') }}      # [linux]
     - {{ cdt('libxdamage') }}            # [linux]
     - {{ cdt('libxfixes') }}             # [linux]
     - {{ cdt('libxxf86vm') }}            # [linux]
+    - {{ cdt('compat-xcb-util') }}       # [linux]
     # For fontconfig + freetype
     - pkg-config                         # [linux]
     - pthread-stubs                      # [linux]
